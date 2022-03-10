@@ -36,4 +36,14 @@ public class Receta {
     public void setTiempoPreparacion(double tiempoPreparacion) {
         this.tiempoPreparacion = tiempoPreparacion;
     }
+
+    private void mostrarIngredientes(){
+        for(Ingrediente ingrediente : Ingredientes){
+            System.out.println(ingrediente);
+        }
+
+        for(int i = 0; i < Ingredientes.size(); i++){
+            System.out.println(i + " - " + Ingredientes.get(i));
+        }
+    }
 }
