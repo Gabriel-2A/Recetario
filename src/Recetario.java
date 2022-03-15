@@ -34,4 +34,12 @@ public class Recetario {
     public void setTitulo(String titulo) {
         Titulo = titulo;
     }
+
+    public void mostrarRecetario(){
+        System.out.println(Titulo);
+        System.out.println(autor);
+        for(Receta receta: recetas){
+            receta.mostrarReceta();
+        }
+    }
 }
