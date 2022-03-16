@@ -3,11 +3,13 @@ public class Ingrediente {
     private boolean esSalado;
     private double peso;
 
+    public Ingrediente() {}
+
     public Ingrediente(String nombre, boolean esSalado, double peso) {
         this.nombre = nombre;
         this.esSalado = esSalado;
         this.peso = peso;
-        System.out.println("Ingrediente creado");
+        //System.out.println("Ingrediente creado");
     }
 
     public String getNombre() {
@@ -34,5 +36,8 @@ public class Ingrediente {
         this.peso = peso;
     }
 
-
+    @Override
+    public String toString(){
+        return nombre;
+    }
 }

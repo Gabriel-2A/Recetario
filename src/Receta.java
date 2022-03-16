@@ -12,8 +12,10 @@ public class Receta {
         Ingredientes = ingredientes;
         this.pasos = pasos;
         this.tiempoPreparacion = tiempoPreparacion;
-        System.out.println("Receta creada");
+       // System.out.println("Receta creada");
     }
+
+    public Receta(){}
 
     public String getNombre() {
         return nombre;
