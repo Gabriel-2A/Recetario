@@ -55,7 +55,7 @@ public class Receta {
         }
 
         for(int i = 0; i < Ingredientes.size(); i++){
-            System.out.println(i + " - " + Ingredientes.get(i));
+            System.out.println(i+1 + " - " + Ingredientes.get(i));
         }
     }
 
