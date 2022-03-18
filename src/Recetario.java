@@ -42,4 +42,10 @@ public class Recetario {
             receta.mostrarReceta();
         }
     }
+
+    public void mostrarRecetas(){
+        for(Receta receta: recetas){
+            receta.mostrarReceta();
+        }
+    }
 }

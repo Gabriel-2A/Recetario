@@ -42,7 +42,9 @@ public class Main {
                     "\n1.- agregar un ingrediente nuevo " +
                     "\n2.- Agregrar una receta nueva " +
                     "\n3.- Ver mi recetario" +
-                    "\n4.- Salir");
+                    "\n4.- Eliminar Ingredientes" +
+                    "\n5.- Eliminar Receta" +
+                    "\n0.- Salir");
             Scanner in = new Scanner(System.in);
             respuesta = in.nextInt();
 
@@ -84,13 +86,13 @@ public class Main {
                 do {
                     respu = in.nextInt();
                     if(respu !=0){
-                    ingredientesReceta.add(ingredientesDisponibles.get(respuesta-1));}
+                    ingredientesReceta.add(ingredientesDisponibles.get(respu-1));}
                 }while(respu !=0);
                 nuevaReceta.setIngredientes(ingredientesReceta);
 
                 ArrayList<String> pasosReceta = new ArrayList<>();
                 System.out.println("Digite los pasos de uno en uno " +
-                        "\nSi ya no quiere agregar mas ingredientes digite 0");
+                        "\nSi ya no quiere agregar mas pasos digite 0");
                 String res = "";
                 do {
                     res = in.nextLine();
@@ -100,11 +102,37 @@ public class Main {
                     nuevaReceta.setPasos(pasosReceta);
                     juan.getRecetas().add(nuevaReceta);
                 break;
+
             case 3:
                 juan.mostrarRecetario();
                 break;
+
+            case 4:
+                System.out.println("Ingredientes disponibles: ");
+                for (int i = 0; i < ingredientesDisponibles.size(); i++) {
+                    System.out.println((i+1) + ".- " + ingredientesDisponibles.get(i));
+                }
+
+                System.out.println("Que ingredientes desea retirar?\n" +
+                        "Presione 0 si ya no quiere retirar mas ingredientes\n");
+                int retirar;
+                do {
+                    if(ingredientesDisponibles.size() == 0){
+                        System.out.println("Ya no hay mas ingredientes.");
+                        break;
+                    }
+                    retirar = in.nextInt();
+                    ingredientesDisponibles.remove(retirar-1);
+                    System.out.println("Ingredente retirado");
+                }while(retirar!=0);
+                break;
+
+            case 5:
+                System.out.println("Recetas Disponibles: \n");
+                juan.mostrarRecetas();
+                break;
         }
 
-        }while (respuesta != 4);
+        }while (respuesta != 0);
     }
 }
