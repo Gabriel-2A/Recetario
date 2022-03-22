@@ -120,16 +120,31 @@ public class Main {
                     if(ingredientesDisponibles.size() == 0){
                         System.out.println("Ya no hay mas ingredientes.");
                         break;
+                    } else {
+                        retirar = in.nextInt();
+                        ingredientesDisponibles.remove(retirar - 1);
+                        System.out.println("Ingredente retirado");
                     }
-                    retirar = in.nextInt();
-                    ingredientesDisponibles.remove(retirar-1);
-                    System.out.println("Ingredente retirado");
                 }while(retirar!=0);
                 break;
 
             case 5:
                 System.out.println("Recetas Disponibles: \n");
                 juan.mostrarRecetas();
+
+                System.out.println("Que recetas desea retirar?\n" +
+                        "Presione 0 si ya no quiere retirar mas recetas\n");
+                int retirarReceta;
+                do {
+                    if(ingredientesDisponibles.size() == 0){
+                        System.out.println("Ya no hay mas Recetas.");
+                        break;
+                    } else {
+                        retirarReceta = in.nextInt();
+                        juan.getRecetas().remove(retirarReceta-1);
+                        System.out.println("Receta retirada");
+                    }
+                }while(retirarReceta !=0);
                 break;
         }
 

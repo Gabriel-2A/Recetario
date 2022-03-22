@@ -66,7 +66,7 @@ public class Receta {
     }
 
     public void mostrarReceta(){
-        System.out.println("Nombre de la receta :" + nombre);
+        System.out.println("\nNombre de la receta :" + nombre);
         System.out.println("Tiempo de preparacion: " + tiempoPreparacion);
         System.out.println("Ingredientes: ");
         mostrarIngredientes();
